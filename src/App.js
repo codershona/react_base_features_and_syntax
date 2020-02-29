@@ -1,6 +1,7 @@
 // import React from 'react';
 import React, { Component } from 'react';
 import './App.css';
+import Person from './Person/Person'; // use Uppercase character for components.
 
 // function App() {
 //   return (
@@ -16,7 +17,9 @@ class App extends Component {
 	return (
     <div className="App">
       <h1>Hi, This is my a React App </h1>
-
+    <p> This is now really working! </p>
+    
+    <Person />
     </div>
   );
 
