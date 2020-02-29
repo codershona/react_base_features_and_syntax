@@ -20,6 +20,8 @@ class App extends Component {
     <p> This is now really working! </p>
     
     <Person />
+     <Person />
+      <Person />
     </div>
   );
 
