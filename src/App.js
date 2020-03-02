@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
+// import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
+import Person from './Person/Person'; // use Uppercase character for components.
 
-function App() {
-  return (
+// function App() {
+//   return (
+//     <div className="App">
+//       <h1>Hi, This is my a React App </h1>
+
+//     </div>
+//   );
+// }
+
+class App extends Component {
+	render() {
+	return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hi, This is my a React App </h1>
+    <p> This is now really working! </p>
+    
+    <Person />
+     <Person />
+      <Person />
     </div>
   );
-}
+
+ // return React.createElement('div', null, 'h1', 'Hi, I\'m a React App!!!');
+// return React.createElement('div', null, React.createElement('h1', null, 'Does react work now?'));
+// return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does react work now?'));
+        }
+	}
+
 
 export default App;
