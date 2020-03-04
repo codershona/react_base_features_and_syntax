@@ -8,6 +8,6 @@
     - cd react_base_features_and_syntax ;
     - yarn start ;
     - localhost:3000/ ;
-    - its working;
+    - 
 
 ```
