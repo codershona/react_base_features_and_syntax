@@ -1,11 +1,3 @@
-// function person() {
-// 	return <h2>
-// }
-
-// var person = function () {
-
-// }
-
 // const person = function()
 import React from 'react'
 
