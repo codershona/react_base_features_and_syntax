@@ -20,7 +20,7 @@ class App extends Component {
     <p> This is now really working! </p>
     
     <Person name="Lissa" age="32" />
-     <Person name="Lily" age="23" />
+     <Person name="Lily" age="23" >My Hobbies: Biking</Person>
       <Person name="Lima" age="46" />
     </div>
   );
