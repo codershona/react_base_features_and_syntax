@@ -1,4 +1,3 @@
-// const person = function()
 import React from 'react'
 
 const person = (props) => {
