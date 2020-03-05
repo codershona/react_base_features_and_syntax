@@ -10,6 +10,6 @@
     - localhost:3000/ ;
     * Understanding the base features and Syntax;
     * Working with Lists and Conditional;
-    
+    * Styling React Components and elements ;
 
 ```
