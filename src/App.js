@@ -13,18 +13,6 @@ class App extends Component {
     showPersons: false
   }
 
-  // switchNameHandler = (newName) => {
-  //   // console.log('Was clicked!');
-  //   // DON'T DO THIS: this.state.persons[0].name = 'Maximilian';
-  //   this.setState( {
-  //     persons: [
-  //       { name: newName, age: 28 },
-  //       { name: 'Manu', age: 29 },
-  //       { name: 'Stephanie', age: 27 }
-  //     ]
-  //   } )
-  //  }
-
   nameChangedHandler = (event, id ) => {
      
      const personIndex = this.state.persons.findIndex(p => {
@@ -63,7 +51,7 @@ class App extends Component {
   render () {
  // working with inline styles
   const style = {
-    backgroundColor: 'white',
+    backgroundColor: 'green',
     font: 'inherit',
     border: '1px solid blue',
     padding: '8px',
@@ -72,7 +60,7 @@ class App extends Component {
 
      let persons = null; 
 
-     if (this.state.showPersons) {
+     if ( this.state.showPersons ) {
       persons = (
 
       <div>
@@ -81,7 +69,7 @@ class App extends Component {
           click={() => this.deletePersonHandler(index)}
             name={person.name} 
             age={person.age} 
-            // key={index} />
+            
             key={person.id}
             changed={(event) => this.nameChangedHandler(event, person.id)} />
          })}
