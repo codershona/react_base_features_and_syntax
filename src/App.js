@@ -52,6 +52,7 @@ class App extends Component {
  // working with inline styles
   const style = {
     backgroundColor: 'green',
+    color: 'white',
     font: 'inherit',
     border: '1px solid blue',
     padding: '8px',
@@ -77,6 +78,8 @@ class App extends Component {
         </div>
 
          );
+
+         style.backgroundColor = 'red';
 
      }
 
