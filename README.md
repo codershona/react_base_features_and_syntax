@@ -13,7 +13,7 @@
     * Styling React Components and elements ;
      - Adding and Using Radium (npm install --save radium) : [Radium is a popular package in react which allows us to use inline styles with sudo selectors and media queries.] ;
      - npm install --save styled-components ;
-     - npm run eject ;
+     - npm run eject ; then --- git add . ; then -- git commit -m "" ; then -- run : npm run eject again ; 
      - 
 
 
