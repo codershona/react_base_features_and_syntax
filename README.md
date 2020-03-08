@@ -15,6 +15,8 @@
      - npm install --save styled-components ;
      - npm run eject ; then --- git add . ; then -- git commit -m "" ; then -- run : npm run eject again ; 
      - Debugging react Apps ;
+     - Diving Deeper into Components and react Internals ;
+     - 
 
 
      TIPS :  New minor version of npm available! 6.13.7 → 6.14.2       │
