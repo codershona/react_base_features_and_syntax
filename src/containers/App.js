@@ -11,6 +11,13 @@ import Cockpit from '../components/Cockpit/Cockpit';
 // import Radium, { StyleRoot } from 'radium';
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+    console.log('[App.js] constructor');
+
+  }
+
   state = {
     persons: [
       { id: 'asfa1', name: 'Max', age: 28 },
@@ -19,6 +26,27 @@ class App extends Component {
     ],
     otherState: 'some other value',
     showPersons: false
+  }
+
+
+  static getDerivedStateFromProps(props, state) {
+    console.log('[App.js] getDerivedStateFromProps', props);
+
+    return state;
+  }
+
+  componentWillMount() {
+    console.log('[App.js] componentWillMount');
+  }
+
+  // or, if you want to set more initial sate based on props, use the constructor
+
+  
+
+  componentDidMount() {
+
+    console.log('[App.js] componentDidMount');
+
   }
 
   nameChangedHandler = (event, id ) => {
@@ -59,16 +87,19 @@ class App extends Component {
   render () {
  // working with inline styles
  
-
-     let persons = null; 
+     console.log('[App.js] render');
+    
+    let persons = null; 
      
 
      if ( this.state.showPersons ) {
-      persons =
+      persons = (
       <Persons 
       persons={this.state.persons}
       clicked={this.deletePersonHandler}
-      changed={this.nameChangedHandler} /> ;
+      changed={this.nameChangedHandler} /> 
+
+      );
     }
     return (
 
