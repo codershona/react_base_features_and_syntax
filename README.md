@@ -44,3 +44,24 @@
   	 want to use React Hooks!)
 
 ```
+
+
+####     Component Lifecycle - Creation :
+
+```
+                 
+ Default ES6 class Feature ---* constructor(props) ---- Call super(props)
+                                              DO: Set up State
+                                             DON'T: Cause Side-Effects
+
+     * getDeriedStateFromProps(props, state)--- DO: Sync state
+                                             DON'T: Cause Side-Effects
+
+       * render() -------  Prepare & Structure your JSX Code
+
+       * Render Child Components 
+
+       * ComponentDidMount() ---- DO: Cause Side-effects
+                                 DON'T: Update State(triggers re-render)
+
+```
