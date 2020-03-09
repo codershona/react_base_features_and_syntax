@@ -24,3 +24,23 @@
    │               Run npm install -g npm to update! 
 
 ```
+
+
+####  Class-based vs Functional Components :
+
+```
+
+     class-based --------------------------------   Functional
+   
+  * class XY extends Component ---------    const XY = props => {...}
+    ** Access to State (Yes)   -------   Access to State(useSate()) (Yes)
+    ** Lifecycle Hooks (Yes)   --------- Lifecycle Hooks (NO)
+  
+  - Access State and Props via "this"  ----- Access Props via "props"
+  - this.sate.XY & this.props.XY       ------ props.XY
+  (Use if you need to manage State    ----- (Use in all other Cases)
+  	or access to Lifecycle Hooks
+  	 and you don't 
+  	 want to use React Hooks!)
+
+```
