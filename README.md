@@ -16,7 +16,7 @@
      - npm run eject ; then --- git add . ; then -- git commit -m "" ; then -- run : npm run eject again ; 
      - Debugging react Apps ;
      - Diving Deeper into Components and react Internals ;
-     - 
+     - Remove Errorboundaries folder use it it some cases;
 
 
      TIPS :  New minor version of npm available! 6.13.7 → 6.14.2       │
