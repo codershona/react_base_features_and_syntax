@@ -65,3 +65,28 @@
                                  DON'T: Update State(triggers re-render)
 
 ```
+
+### Component Lifecycle - Update :
+
+```
+ May Cancel Updating process! ---- 
+
+* getDeriedStateFromProps(props, state) --- DO: Sync Sate to Props;
+                                       --- DON'T: Cause Side-Effects;
+  
+* shouldComponentUpdate(nextProps,nextState) --- 
+                      ----    DO: Decide whether to continue or NOT ; 
+                      ---- DON'T: Cause Side-Effects ; 
+
+        * render()
+        * Update Child Component Props
+* getSnapshotBeforeUpdate(prevProps,prevState) -----
+                            --- DO: Last-minute DOM ops;
+                        --- DON'T: Cause Side-effects ;
+
+  * componentDidUpdate() --- DO: Cause Side-Effects ;
+                        --- DON'T: Update state (trigger re-render) ;
+ 
+```
+
+
