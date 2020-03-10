@@ -44,9 +44,20 @@ class App extends Component {
   
 
   componentDidMount() {
+      console.log('[App.js] componentDidMount');
+  }
+   
+   shouldComponentUpdate(nextProps, nextState) {
+    console.log('[App.js] shouldComponentUpdate');
+    
+    // return false;
+    
+    return true;
+   }
 
-    console.log('[App.js] componentDidMount');
+  componentDidUpdate() {
 
+    console.log('[App.js] componentDidUpdate');
   }
 
   nameChangedHandler = (event, id ) => {
@@ -109,7 +120,8 @@ class App extends Component {
          showPersons={this.state.showPersons} 
         
         persons={this.state.persons}
-        clicked={this.togglePersonsHandler} />
+        clicked={this.togglePersonsHandler} 
+        />
         {persons}
     </div>
     
