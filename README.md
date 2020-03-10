@@ -1,6 +1,6 @@
 ### React Base features and Syntax
 
-
+###### Builded by Falguni Islam (Self- taught Programmer)
 
 * NOTES :
 ```
@@ -90,3 +90,27 @@
 ```
 
 
+#### How React Updates the DOM :
+
+```
+  *  shouldComponentUpdate()
+    passed!      ------------------------ render() is called
+
+
+  * Faster than "real" DOM -------- Old Virtual DOM <div>...</div>
+                  -------- Re-renered Virtual DOM <div>...</div> 
+                    |
+                    --------> render() doesn't immediately update the "real" DOM!
+
+
+                     COMPARISON
+
+  {NO DIFFERENCES? Don't
+ touch the "real" DOM! } <----- DIFFERENCES ----> { Diffrences found? 
+                                              Update "real" DOM}
+
+```
+
+
+
+######  
