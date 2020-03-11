@@ -6,7 +6,7 @@ const withClass = (WrappedComponent, className) => {
       
       <div className={className}>
 
-            <WrappedComponent name="Max"/>
+            <WrappedComponent props={props}/>
 
       </div>
 
