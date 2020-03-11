@@ -18,6 +18,8 @@
      - Diving Deeper into Components and react Internals ;
      - Remove Errorboundaries folder use it it some cases;
 
+      - Using PropTypes : npm install --save prop-types ;
+      - 
 
      TIPS :  New minor version of npm available! 6.13.7 → 6.14.2       │
    │   Changelog: https://github.com/npm/cli/releases/tag/v6.14.2   │
