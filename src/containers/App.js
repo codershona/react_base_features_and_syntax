@@ -147,7 +147,8 @@ class App extends Component {
       authenticated: this.state.authenticated, 
       login: this.loginHandler
     
-    }} >
+    }}
+        >
   
 
         {this.state.showCockpit ? (
@@ -157,7 +158,7 @@ class App extends Component {
         
         personsLength={this.state.persons.length}
         clicked={this.togglePersonsHandler} 
-        login={this.loginHandler}
+        
         /> 
 
         ) : null}
