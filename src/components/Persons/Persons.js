@@ -59,6 +59,8 @@ class Persons extends PureComponent {
     console.log('[Persons.js] componentWillUnmount');
     
   }
+  // The naming can be confusing but "Lifecycle Hooks" have absolutely nothing to do with "React Hooks"!
+  
 
   render() {
 
