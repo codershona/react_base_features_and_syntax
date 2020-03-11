@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
 
 import classes from './App.css';
-import Person from '../components/Persons/Person/Person';
+import Persons from '../components/Persons/Persons';
+
+import Cockpit from '../components/Cockpit/Cockpit';
+import withClass from '../hoc/withClass';
+import Aux from '../hoc/Auxiliary';
+import AuthContext from '../context/auth-context';
+
 // import styled from 'styled-components';
 
 // import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
@@ -9,14 +15,56 @@ import Person from '../components/Persons/Person/Person';
 // import Radium, { StyleRoot } from 'radium';
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+    console.log('[App.js] constructor');
+
+  }
+
   state = {
     persons: [
-      { name: 'Max', age: 28 },
-      { name: 'Manu', age: 29 },
-      { name: 'Stephanie', age: 26 }
+      { id: 'asfa1', name: 'Max', age: 28 },
+      { id: 'vasdf1', name: 'Manu', age: 29 },
+      { id: 'asdf11', name: 'Stephanie', age: 26 }
     ],
     otherState: 'some other value',
-    showPersons: false
+    showPersons: false,
+    showCockpit: true,
+    changeCounter: 0,
+    authenticated: false
+  }
+
+
+  static getDerivedStateFromProps(props, state) {
+    console.log('[App.js] getDerivedStateFromProps', props);
+
+    return state;
+  }
+
+  // componentWillMount() {
+  //   console.log('[App.js] componentWillMount');
+  // }
+
+  // or, if you want to set more initial sate based on props, use the constructor
+
+  
+
+  componentDidMount() {
+      console.log('[App.js] componentDidMount');
+  }
+   
+   shouldComponentUpdate(nextProps, nextState) {
+    console.log('[App.js] shouldComponentUpdate');
+    
+    // return false;
+    
+    return true;
+   }
+
+  componentDidUpdate() {
+
+    console.log('[App.js] componentDidUpdate');
   }
 
   nameChangedHandler = (event, id ) => {
@@ -37,8 +85,16 @@ class App extends Component {
     const persons = [...this.state.persons];
     persons[personIndex] = person;
 
-    this.setState( { persons: persons } );
-  }
+    this.setState((prevState, props) => {
+      return {
+        
+      persons: persons, 
+      changeCounter: prevState.changeCounter + 1
+         };
+
+      } );
+    };
+  
 
     deletePersonHandler = ( personIndex ) => {
       // const persons = this.state.persons.slice();
@@ -53,60 +109,64 @@ class App extends Component {
       this.setState( { showPersons: !doesShow } );
     }
 
+    loginHandler = () => {
+      
+      this.setState({authenticated: true});
+
+    };
+
 
   render () {
  // working with inline styles
  
-
-     let persons = null; 
-     let btnClass = '';
+     console.log('[App.js] render');
+    
+    let persons = null; 
+     
 
      if ( this.state.showPersons ) {
       persons = (
-
-      <div>
-         {this.state.persons.map((person, index) => {
-          return  <Person
-          click={() => this.deletePersonHandler(index)}
-            name={person.name} 
-            age={person.age} 
-            
-           key={person.id}
-            changed={(event) => this.nameChangedHandler(event, person.id)} />
-           
-         } )}
-    
-        </div>
-
-         );
-
-         btnClass = classes.Red;
+      <Persons 
+      persons={this.state.persons}
+      clicked={this.deletePersonHandler}
+      changed={this.nameChangedHandler} 
+      isAuthenticated={this.state.authenticated}
+   /> 
+      );
     }
-
-   
-     const assignedClasses = [];
-     if (this.state.persons.length <= 2) {
-      assignedClasses.push(classes.red); 
-     }
-     if (this.state.persons.length <= 1) {
-      assignedClasses.push(classes.bold);
-     }
- 
-
     return (
 
-   
+     <Aux>
+     <button onClick={() => {
+      this.setState({showCockpit: false });
+     }}
+     >
+     Remove Cockpit
+     </button>
+    <AuthContext.Provider value={{
+      authenticated: this.state.authenticated, 
+      login: this.loginHandler
+    
+    }}
+        >
+  
 
-      <div className={classes.App}>
-        <h1>Hi, I'm a React App</h1>
-        <p className={assignedClasses.join(' ')}>This is really working!</p>
-        <button className={btnClass}
+        {this.state.showCockpit ? (
+          <Cockpit
+        title={this.props.appTitle}
+         showPersons={this.state.showPersons} 
         
-        onClick={this.togglePersonsHandler}>
-        TOGGLE Persons
-        </button>
+        personsLength={this.state.persons.length}
+        clicked={this.togglePersonsHandler} 
+        
+        /> 
+
+        ) : null}
         {persons}
-    </div>
+
+     </AuthContext.Provider>
+
+    </Aux>
     
 
       );
@@ -114,4 +174,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withClass(App, classes.App);
