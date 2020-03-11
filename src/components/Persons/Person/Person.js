@@ -15,7 +15,7 @@ class Person extends Component {
         // return (React.createElement() React.createElement()
         return (
 
-    <React.Fragment>
+    <Fragment>
 
     <p onClick={this.props.click}>
        I'm {this.props.name} and I am {this.props.age} years old!</p>
@@ -25,7 +25,7 @@ class Person extends Component {
     type="text" onChange={this.props.changed} 
     value={this.props.name} />
 
-     </React.Fragment> 
+     </Fragment> 
      );
 
 	}
