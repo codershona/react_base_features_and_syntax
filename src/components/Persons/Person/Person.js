@@ -11,8 +11,13 @@ import classes from './Person.css';
 
 class Person extends Component {
 
+    constructor() {
+        this.inputElement = React.createRef();
+    }
+
    componentDidMount() {
     // document.querySelector('input').focus();
+    this.inputElement.focus();
    }
 
 
@@ -32,7 +37,7 @@ class Person extends Component {
     <input 
     key="i3"
 
-    ref={(inputEl) => {inputEl.focus()}}
+    ref={(inputEl) => {this.inputElement = inputEl}}
 
     type="text" onChange={this.props.changed} 
     value={this.props.name} />
