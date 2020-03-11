@@ -10,6 +10,13 @@ import classes from './Person.css';
 
 
 class Person extends Component {
+
+   componentDidMount() {
+    // document.querySelector('input').focus();
+   }
+
+
+
 	render() {
     
     console.log('[Person.js] rendering...');
@@ -24,6 +31,9 @@ class Person extends Component {
         <p key="i2">{this.props.children}</p>
     <input 
     key="i3"
+
+    ref={(inputEl) => {inputEl.focus()}}
+
     type="text" onChange={this.props.changed} 
     value={this.props.name} />
 
