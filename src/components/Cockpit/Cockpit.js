@@ -70,6 +70,8 @@ const Cockpit = props => {
         onClick={props.clicked}>
         TOGGLE Persons
         </button>
+
+        <button onClick={props.login}> Log In</button>
         </div>
 
 
