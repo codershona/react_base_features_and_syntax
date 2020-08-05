@@ -1,7 +1,5 @@
 ### React Base features and Syntax
 
-###### Builded by Falguni Islam (Self- taught Programmer)
-
 * NOTES :
 ```
     - npx create-react-app react_base_features_and_syntax ;
